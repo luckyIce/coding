@@ -1,0 +1,2 @@
+check	main.cpp	/^bool check(char ch,vector<bool>& used){$/
+isValidSudoku	main.cpp	/^bool isValidSudoku(const vector<vector<char>>& boa/
