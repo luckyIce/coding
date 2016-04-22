@@ -9,17 +9,24 @@
 #include<vector>
 using namespace std;
 int removeDuplicates(vector<int> nums){
+    int times=0;
     int index=0;
     for(auto num:nums){
-        if(index==0||num!=nums[index-1]){
+        if(index==0||nums[index-1]!=num){
             nums[index]=num;
             index++;
+            times=1;
+        }
+        else if(nums[index-1]==num&&times==1){
+            nums[index]=num;
+            index++;
+            times=2;
         }
     }
     return index;
 }
 int main(){
-    vector<int> nums={1,1,2};
+    vector<int> nums={1,1,1,1,1,2,1};
     cout<<removeDuplicates(nums);
     return 0;
 }
