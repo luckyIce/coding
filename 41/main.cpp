@@ -9,13 +9,34 @@
 #include<algorithm>
 #include<string>
 using namespace std;
-string lastWord(const string& s){
-    auto first=find_if(s.rbegin(),s.rend(),::isalpha);
-    auto end=find_if_not(first,s.rend(),::isalpha);
-    return distance(first,end);
+int lastWord(const string& s){
+    int len=0;
+    int length=0;
+    //第一种情况为单词第一个字母
+    //len=0
+    //len++
+    //第二种情况为单词中间字母
+    //len++
+    //第三种情况为单词最后一个字母
+    //len++ return
+    for(auto c:s){
+        if(c!=' '){
+            ++len;
+        }
+        else{
+            if(len>0){
+                length=len;
+            }
+            len=0;
+        }
+    }
+    if(len>0){
+        length=len;
+    }
+    return length;
 }
 int main(){
-    string s="lkua cky";
+    string s="lkua   ";
     cout<<lastWord(s);
     return 0;
 }
