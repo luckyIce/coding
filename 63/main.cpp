@@ -61,6 +61,14 @@ ListNode* addTwo(ListNode h1,ListNode h2){
         p2=p2->next;
         }
     }
+    while(p1){
+        ListNode* node=new ListNode(p1->val);
+        dummy.insert_back(*node);
+    }
+    while(p2){
+        ListNode* node=new ListNode(p2->val);
+        dummy.insert_back(*node);
+    }
     return dummy.next;
 }
 int main() {
