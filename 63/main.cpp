@@ -90,6 +90,12 @@ int main() {
     ListNode dummy(-1);
     dummy.next=node;
     dummy.print();
+    auto p=dummy.next;
+    while(p){
+        auto q=p;
+        p=p->next;
+        delete q;
+    }
     return 0;
 }
 
