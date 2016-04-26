@@ -49,9 +49,9 @@ ListNode* rotateRight(ListNode* head,int n){
     }
     len++;
     p->next=head;
-    n=n%len;
+    n=len-n%len;
     auto q=head;
-    for(int i=1;i<n+1;i++){
+    for(int i=1;i<n;i++){
         q=q->next;
     }
     head=q->next;
@@ -63,7 +63,7 @@ int main() {
     for(int i=1;i<6;i++){
         dummy.insert_back(i);
     }
-    int n=2;
+    int n=4;
     auto p=rotateRight(dummy.next,n);
     dummy.next=p;
     dummy.print();
