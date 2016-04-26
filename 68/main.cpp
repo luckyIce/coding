@@ -75,7 +75,7 @@ int main() {
     for(int i=1;i<6;i++){
         dummy.insert_back(i);
     }
-    int n=2;
+    int n=4;
     auto p=rotateRight(dummy.next,n);
     dummy.next=p;
     dummy.print();
